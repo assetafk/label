@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useRef } from 'react'
 import { Gallery, type GalleryHandle } from '../components/Gallery'
 import { SmartImage } from '../components/SmartImage'
+import { Spinner } from '../components/Spinner'
 import { useWork } from '../queries/works'
 
 export function WorkDetailRoute() {
@@ -31,6 +32,7 @@ export function WorkDetailRoute() {
         </div>
         {isLoading ? (
           <div className="space-y-4">
+            <Spinner label="Loading work…" />
             <div className="h-10 w-2/3 animate-pulse rounded bg-white/5" />
             <div className="h-4 w-full animate-pulse rounded bg-white/5" />
             <div className="h-4 w-2/3 animate-pulse rounded bg-white/5" />

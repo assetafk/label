@@ -2,6 +2,8 @@ import { useId, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Reveal } from '../components/Reveal'
 import { WorkCard } from '../components/WorkCard'
+import { TechStack } from '../components/TechStack'
+import { Spinner } from '../components/Spinner'
 import { useClients } from '../queries/clients'
 import { useContactMutation } from '../queries/contact'
 import { usePrefetchWork, useWorks } from '../queries/works'
@@ -87,8 +89,14 @@ export function HomeRoute() {
         </div>
 
         <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {worksLoading ? (
+            <div className="md:col-span-3 flex justify-center">
+              <Spinner label="Loading featured works…" />
+            </div>
+          ) : null}
+
           {worksLoading
-            ? Array.from({ length: 3 }).map((_, i) => (
+            ? Array.from({ length: 0 }).map((_, i) => (
                 <div
                   key={i}
                   className="overflow-hidden rounded-3xl border border-white/10 bg-[rgb(var(--card))]"
@@ -148,6 +156,8 @@ export function HomeRoute() {
           ))}
         </div>
       </section>
+
+      <TechStack />
 
       <section>
         <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
@@ -242,7 +252,13 @@ export function HomeRoute() {
                 disabled={contact.isPending}
                 className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {contact.isPending ? 'Sending…' : 'Send message'}
+                {contact.isPending ? (
+                  <>
+                    <span>Sending…</span>
+                  </>
+                ) : (
+                  'Send message'
+                )}
                 <span aria-hidden>→</span>
               </button>
 

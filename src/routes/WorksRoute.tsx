@@ -1,5 +1,6 @@
 import { useDeferredValue, useMemo, useState, useTransition } from 'react'
 import { WorkCard } from '../components/WorkCard'
+import { Spinner } from '../components/Spinner'
 import { usePrefetchWork, useWorks } from '../queries/works'
 
 export function WorksRoute() {
@@ -116,7 +117,7 @@ export function WorksRoute() {
               ))}
             </select>
             {isPending ? (
-              <div className="text-xs text-[rgb(var(--fg)/0.55)]">Updating…</div>
+              <Spinner size={16} label="Updating…" />
             ) : null}
           </div>
         </div>
@@ -129,6 +130,11 @@ export function WorksRoute() {
       ) : null}
 
       <section className="grid gap-6 md:grid-cols-2">
+        {isLoading && (
+          <div className="md:col-span-2 flex justify-center">
+            <Spinner label="Loading works…" />
+          </div>
+        )}
         {isLoading
           ? Array.from({ length: 6 }).map((_, i) => (
               <div
