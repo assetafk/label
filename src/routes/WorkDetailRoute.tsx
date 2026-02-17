@@ -1,12 +1,19 @@
 import { Link, useParams } from 'react-router-dom'
 import { useRef } from 'react'
 import { Gallery, type GalleryHandle } from '../components/Gallery'
+import { SmartImage } from '../components/SmartImage'
 import { useWork } from '../queries/works'
 
 export function WorkDetailRoute() {
   const { slug } = useParams()
   const { data: work, isLoading, isError, error } = useWork(slug ?? '')
   const galleryRef = useRef<GalleryHandle | null>(null)
+  const slides =
+    work?.gallery?.length
+      ? work.gallery
+      : work?.cover?.kind === 'image'
+        ? [{ src: work.cover.src, alt: work.cover.alt }]
+        : undefined
 
   return (
     <div className="space-y-10 pt-10">
@@ -44,18 +51,14 @@ export function WorkDetailRoute() {
 
       <section className="grid gap-6 md:grid-cols-12">
         <div className="md:col-span-8">
-          <Gallery ref={galleryRef} title="Preview" />
+          <Gallery ref={galleryRef} title="Preview" slides={slides} />
 
           {work?.blocks?.length ? (
             <div className="mt-6 space-y-4">
-              {work.blocks
-                .filter(
-                  (b): b is { type: 'text'; title: string; body: string } =>
-                    b.type === 'text',
-                )
-                .map((b) => (
+              {work.blocks.map((b, idx) =>
+                b.type === 'text' ? (
                   <div
-                    key={b.title}
+                    key={`${b.title}-${idx}`}
                     className="rounded-3xl border border-white/10 bg-black/30 p-6"
                   >
                     <div className="text-xs tracking-[0.22em] uppercase text-white/60">
@@ -65,7 +68,23 @@ export function WorkDetailRoute() {
                       {b.body}
                     </div>
                   </div>
-                ))}
+                ) : (
+                  <div
+                    key={`${b.alt}-${idx}`}
+                    className="overflow-hidden rounded-3xl border border-white/10 bg-[rgb(var(--card))]"
+                  >
+                    <div className="aspect-[16/9]">
+                      {/* image block */}
+                      <SmartImage src={b.src} alt={b.alt} sizes="(max-width: 768px) 100vw, 70vw" />
+                    </div>
+                    {b.caption ? (
+                      <div className="border-t border-white/10 px-5 py-4 text-xs text-white/60">
+                        {b.caption}
+                      </div>
+                    ) : null}
+                  </div>
+                ),
+              )}
             </div>
           ) : null}
         </div>

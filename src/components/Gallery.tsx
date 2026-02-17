@@ -5,6 +5,7 @@ import {
   useRef,
   useState,
 } from 'react'
+import { SmartImage } from './SmartImage'
 
 export type GalleryHandle = {
   next: () => void
@@ -14,15 +15,24 @@ export type GalleryHandle = {
 
 export const Gallery = forwardRef<
   GalleryHandle,
-  { title?: string; slides?: { from: string; to: string }[] }
+  { title?: string; slides?: { src: string; alt: string }[] }
 >(function Gallery({ title = 'Gallery', slides }, ref) {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const items = useMemo(
     () =>
       slides ?? [
-        { from: 'rgba(255,255,255,0.12)', to: 'rgba(210,255,105,0.18)' },
-        { from: 'rgba(210,255,105,0.12)', to: 'rgba(255,255,255,0.10)' },
-        { from: 'rgba(255,255,255,0.08)', to: 'rgba(255,255,255,0.02)' },
+        {
+          src: 'https://images.unsplash.com/photo-1520975958225-2e7f4d8a2f7a?auto=format&fit=crop&q=80&w=1600',
+          alt: 'Abstract studio light',
+        },
+        {
+          src: 'https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&q=80&w=1600',
+          alt: 'Close-up of typography print',
+        },
+        {
+          src: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&q=80&w=1600',
+          alt: 'Desk with design sketches',
+        },
       ],
     [slides],
   )
@@ -66,11 +76,11 @@ export const Gallery = forwardRef<
       </div>
 
       <div ref={containerRef} className="aspect-[16/9] w-full">
-        <div
+        <SmartImage
+          src={slide.src}
+          alt={slide.alt}
+          sizes="(max-width: 768px) 100vw, 70vw"
           className="h-full w-full"
-          style={{
-            background: `linear-gradient(135deg, ${slide.from}, transparent 45%, ${slide.to})`,
-          }}
         />
       </div>
     </div>

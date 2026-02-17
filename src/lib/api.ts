@@ -1,6 +1,10 @@
 export type WorkBlock =
   | { type: 'text'; title: string; body: string }
-  | { type: 'image'; alt: string; src: string }
+  | { type: 'image'; alt: string; src: string; caption?: string }
+
+export type WorkCover =
+  | { kind: 'gradient'; from: string; to: string }
+  | { kind: 'image'; src: string; alt: string }
 
 export type Work = {
   slug: string
@@ -9,7 +13,8 @@ export type Work = {
   year: number
   services: string[]
   industry: string
-  cover?: { kind: 'gradient'; from: string; to: string }
+  cover?: WorkCover
+  gallery?: { src: string; alt: string }[]
   blocks: WorkBlock[]
 }
 
