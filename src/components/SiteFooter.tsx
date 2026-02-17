@@ -9,20 +9,20 @@ export function SiteFooter() {
             <div className="text-sm font-medium tracking-[0.18em] uppercase opacity-80">
               Label Studio
             </div>
-            <div className="text-sm text-white/60">
+            <div className="text-sm text-[rgb(var(--fg)/0.65)]">
               Motion-first web experiences. Built with React.
             </div>
           </div>
 
-          <div className="flex items-center gap-6 text-sm text-white/60">
-            <Link className="hover:text-white" to="/works">
+          <div className="flex items-center gap-6 text-sm text-[rgb(var(--fg)/0.65)]">
+            <Link className="hover:text-[rgb(var(--fg))]" to="/works">
               Works
             </Link>
-            <a className="hover:text-white" href="#contact">
+            <a className="hover:text-[rgb(var(--fg))]" href="#contact">
               Contact
             </a>
             <a
-              className="hover:text-white"
+              className="hover:text-[rgb(var(--fg))]"
               href="https://www.awwwards.com/fantik.studio/"
               target="_blank"
               rel="noreferrer"
@@ -32,7 +32,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-8 text-xs text-white/40">
+        <div className="mt-8 text-xs text-[rgb(var(--fg)/0.45)]">
           © {new Date().getFullYear()} Label. All rights reserved.
         </div>
       </div>

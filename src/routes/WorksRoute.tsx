@@ -34,7 +34,7 @@ export function WorksRoute() {
         <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
           Works
         </h1>
-        <p className="mt-4 max-w-[70ch] text-sm leading-relaxed text-white/60 md:text-base">
+        <p className="mt-4 max-w-[70ch] text-sm leading-relaxed text-[rgb(var(--fg)/0.65)] md:text-base">
           A curated set of experiments, launches, and interactive builds. Data
           is loaded from the local API with TanStack Query.
         </p>
@@ -43,10 +43,10 @@ export function WorksRoute() {
       <section className="rounded-3xl border border-white/10 bg-[rgb(var(--card))] p-6 md:p-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="space-y-1">
-            <div className="text-xs tracking-[0.22em] uppercase text-white/60">
+            <div className="text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.6)]">
               Search
             </div>
-            <div className="text-sm text-white/60">
+            <div className="text-sm text-[rgb(var(--fg)/0.65)]">
               Try “motion”, “design”, “SaaS”…
             </div>
           </div>
@@ -56,7 +56,7 @@ export function WorksRoute() {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Search works"
-              className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/25"
+              className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-[rgb(var(--fg))] placeholder:text-[rgb(var(--fg)/0.45)] outline-none focus:border-white/25"
             />
           </div>
         </div>
@@ -69,8 +69,8 @@ export function WorksRoute() {
               className={[
                 'rounded-full border px-3 py-1 text-xs transition',
                 !service
-                  ? 'border-white/25 bg-white/10 text-white'
-                  : 'border-white/15 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white',
+                  ? 'border-white/25 bg-white/10 text-[rgb(var(--fg))]'
+                  : 'border-white/15 bg-white/5 text-[rgb(var(--fg)/0.7)] hover:bg-white/10 hover:text-[rgb(var(--fg))]',
               ].join(' ')}
             >
               All services
@@ -87,8 +87,8 @@ export function WorksRoute() {
                 className={[
                   'rounded-full border px-3 py-1 text-xs transition',
                   service === s
-                    ? 'border-white/25 bg-white/10 text-white'
-                    : 'border-white/15 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white',
+                    ? 'border-white/25 bg-white/10 text-[rgb(var(--fg))]'
+                    : 'border-white/15 bg-white/5 text-[rgb(var(--fg)/0.7)] hover:bg-white/10 hover:text-[rgb(var(--fg))]',
                 ].join(' ')}
               >
                 {s}
@@ -97,7 +97,7 @@ export function WorksRoute() {
           </div>
 
           <div className="flex items-center gap-2">
-            <div className="text-xs tracking-[0.22em] uppercase text-white/50">
+            <div className="text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.55)]">
               Year
             </div>
             <select
@@ -106,7 +106,7 @@ export function WorksRoute() {
                 const v = e.target.value
                 startTransition(() => setYear(v ? Number(v) : undefined))
               }}
-              className="rounded-xl border border-white/15 bg-black/30 px-3 py-2 text-xs text-white/80 outline-none focus:border-white/25"
+              className="rounded-xl border border-white/15 bg-black/30 px-3 py-2 text-xs text-[rgb(var(--fg)/0.85)] outline-none focus:border-white/25"
             >
               <option value="">All</option>
               {years.map((y) => (
@@ -116,7 +116,7 @@ export function WorksRoute() {
               ))}
             </select>
             {isPending ? (
-              <div className="text-xs text-white/50">Updating…</div>
+              <div className="text-xs text-[rgb(var(--fg)/0.55)]">Updating…</div>
             ) : null}
           </div>
         </div>
@@ -149,7 +149,7 @@ export function WorksRoute() {
       </section>
 
       {!isLoading && (works?.length ?? 0) === 0 ? (
-        <section className="rounded-3xl border border-white/10 bg-[rgb(var(--card))] p-10 text-sm text-white/60">
+        <section className="rounded-3xl border border-white/10 bg-[rgb(var(--card))] p-10 text-sm text-[rgb(var(--fg)/0.65)]">
           No works found. Try a different query.
         </section>
       ) : null}
