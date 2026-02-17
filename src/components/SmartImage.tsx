@@ -40,7 +40,7 @@ export function SmartImage({
       ) : null}
 
       {failed ? (
-        <div className="absolute inset-0 grid place-items-center bg-black/30 text-xs tracking-[0.22em] uppercase text-white/50">
+        <div className="absolute inset-0 grid place-items-center bg-black/30 text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.55)]">
           Image unavailable
         </div>
       ) : (

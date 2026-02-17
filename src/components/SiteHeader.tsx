@@ -66,7 +66,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:px-8">
         <NavLink to="/" className="group inline-flex items-center gap-2">
           <span className="h-2 w-2 rounded-full bg-[rgb(var(--accent))]" />
-          <span className="text-sm font-medium tracking-[0.18em] uppercase opacity-90 group-hover:opacity-100">
+          <span className="text-sm font-medium tracking-[0.18em] uppercase text-[rgb(var(--fg))] opacity-90 group-hover:opacity-100">
             Label
           </span>
         </NavLink>
@@ -88,7 +88,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={toggleTheme}
-            className="hidden rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs tracking-[0.22em] uppercase text-white/70 transition hover:bg-white/10 hover:text-white md:inline-flex"
+            className="hidden rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.75)] transition hover:bg-white/10 hover:text-[rgb(var(--fg))] md:inline-flex"
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? 'Dark' : 'Light'}
@@ -97,7 +97,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={toggleMenu}
-            className="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm tracking-wide text-white/80 transition hover:bg-white/10 md:hidden"
+            className="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm tracking-wide text-[rgb(var(--fg)/0.85)] transition hover:bg-white/10 md:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
           >
@@ -120,13 +120,13 @@ export function SiteHeader() {
             className="fixed right-4 top-20 z-50 w-[min(92vw,360px)] overflow-hidden rounded-3xl border border-white/10 bg-black/70 p-4 backdrop-blur"
           >
             <div className="flex items-center justify-between">
-              <div className="text-xs tracking-[0.22em] uppercase text-white/60">
+              <div className="text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.65)]">
                 Navigation
               </div>
               <button
                 type="button"
                 onClick={closeMenu}
-                className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/70"
+                className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-[rgb(var(--fg)/0.75)]"
               >
                 Close
               </button>
@@ -135,7 +135,7 @@ export function SiteHeader() {
             <div className="mt-4 grid gap-2">
               <NavLink
                 to="/works"
-                className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80"
+                className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-[rgb(var(--fg)/0.85)]"
               >
                 Works
               </NavLink>
@@ -145,7 +145,7 @@ export function SiteHeader() {
                   closeMenu()
                   onContact()
                 }}
-                className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm text-white/80"
+                className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm text-[rgb(var(--fg)/0.85)]"
               >
                 Contact
               </button>
@@ -154,7 +154,7 @@ export function SiteHeader() {
                 onClick={() => {
                   toggleTheme()
                 }}
-                className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm text-white/80"
+                className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm text-[rgb(var(--fg)/0.85)]"
               >
                 Theme: {theme === 'dark' ? 'Dark' : 'Light'}
               </button>

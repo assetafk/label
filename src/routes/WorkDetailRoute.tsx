@@ -19,10 +19,13 @@ export function WorkDetailRoute() {
     <div className="space-y-10 pt-10">
       <header className="space-y-4">
         <div className="flex items-center justify-between gap-4">
-          <Link to="/works" className="text-sm text-white/70 hover:text-white">
+          <Link
+            to="/works"
+            className="text-sm text-[rgb(var(--fg)/0.75)] hover:text-[rgb(var(--fg))]"
+          >
             ← Back
           </Link>
-          <div className="text-xs tracking-[0.22em] uppercase text-white/50">
+          <div className="text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.55)]">
             Work
           </div>
         </div>
@@ -42,7 +45,7 @@ export function WorkDetailRoute() {
             <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
               {work.title}
             </h1>
-            <p className="max-w-[70ch] text-sm leading-relaxed text-white/60 md:text-base">
+            <p className="max-w-[70ch] text-sm leading-relaxed text-[rgb(var(--fg)/0.65)] md:text-base">
               {work.tagline}
             </p>
           </>
@@ -61,10 +64,10 @@ export function WorkDetailRoute() {
                     key={`${b.title}-${idx}`}
                     className="rounded-3xl border border-white/10 bg-black/30 p-6"
                   >
-                    <div className="text-xs tracking-[0.22em] uppercase text-white/60">
+                    <div className="text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.6)]">
                       {b.title}
                     </div>
-                    <div className="mt-3 text-sm leading-relaxed text-white/70">
+                    <div className="mt-3 text-sm leading-relaxed text-[rgb(var(--fg)/0.75)]">
                       {b.body}
                     </div>
                   </div>
@@ -78,7 +81,7 @@ export function WorkDetailRoute() {
                       <SmartImage src={b.src} alt={b.alt} sizes="(max-width: 768px) 100vw, 70vw" />
                     </div>
                     {b.caption ? (
-                      <div className="border-t border-white/10 px-5 py-4 text-xs text-white/60">
+                      <div className="border-t border-white/10 px-5 py-4 text-xs text-[rgb(var(--fg)/0.65)]">
                         {b.caption}
                       </div>
                     ) : null}
@@ -90,41 +93,41 @@ export function WorkDetailRoute() {
         </div>
         <div className="space-y-4 md:col-span-4">
           <div className="rounded-3xl border border-white/10 bg-black p-6">
-            <div className="text-xs tracking-[0.22em] uppercase text-white/60">
+            <div className="text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.6)]">
               Stack
             </div>
-            <div className="mt-3 text-sm text-white/70">
+            <div className="mt-3 text-sm text-[rgb(var(--fg)/0.75)]">
               React, Motion, Query, Tailwind
             </div>
             <div className="mt-5 flex flex-wrap gap-2">
               <button
                 type="button"
                 onClick={() => galleryRef.current?.prev()}
-                className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/70 hover:bg-white/10"
+                className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-[rgb(var(--fg)/0.75)] hover:bg-white/10"
               >
                 Prev
               </button>
               <button
                 type="button"
                 onClick={() => galleryRef.current?.next()}
-                className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/70 hover:bg-white/10"
+                className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-[rgb(var(--fg)/0.75)] hover:bg-white/10"
               >
                 Next
               </button>
               <button
                 type="button"
                 onClick={() => galleryRef.current?.goTo(0)}
-                className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/70 hover:bg-white/10"
+                className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-[rgb(var(--fg)/0.75)] hover:bg-white/10"
               >
                 Reset
               </button>
             </div>
           </div>
           <div className="rounded-3xl border border-white/10 bg-[rgb(var(--card))] p-6">
-            <div className="text-xs tracking-[0.22em] uppercase text-white/60">
+            <div className="text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.6)]">
               Deliverables
             </div>
-            <ul className="mt-3 space-y-2 text-sm text-white/70">
+            <ul className="mt-3 space-y-2 text-sm text-[rgb(var(--fg)/0.75)]">
               {(work?.services ?? ['UI system', 'Motion language', 'Prefetch + caching'])
                 .slice(0, 5)
                 .map((s) => (

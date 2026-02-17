@@ -26,14 +26,14 @@ export function HomeRoute() {
       <section className="pt-10 md:pt-16">
         <div className="grid gap-8 md:grid-cols-12 md:gap-10">
           <div className="md:col-span-8">
-            <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs tracking-[0.18em] uppercase text-white/70">
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs tracking-[0.18em] uppercase text-[rgb(var(--fg)/0.75)]">
               <span className="h-1.5 w-1.5 rounded-full bg-[rgb(var(--accent))]" />
               React • Motion • Craft
             </div>
             <h1 className="mt-6 text-balance text-5xl font-semibold leading-[0.95] tracking-tight md:text-7xl">
               High‑craft websites for brands that refuse to blend in.
             </h1>
-            <p className="mt-6 max-w-[56ch] text-pretty text-base leading-relaxed text-white/70 md:text-lg">
+            <p className="mt-6 max-w-[56ch] text-pretty text-base leading-relaxed text-[rgb(var(--fg)/0.75)] md:text-lg">
               We design and build motion‑first experiences for launches, campaigns,
               and studio portfolios — with a system behind every detail.
             </p>
@@ -46,7 +46,7 @@ export function HomeRoute() {
               </Link>
               <a
                 href="#contact"
-                className="rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-medium text-white/90 transition hover:bg-white/10"
+                className="rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-medium text-[rgb(var(--fg)/0.9)] transition hover:bg-white/10"
               >
                 Start a project
               </a>
@@ -55,18 +55,18 @@ export function HomeRoute() {
 
           <div className="md:col-span-4">
             <Reveal className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-[rgb(var(--card))] p-6">
-              <div className="text-xs tracking-[0.22em] uppercase text-white/60">
+              <div className="text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.6)]">
                 Now booking
               </div>
               <div className="mt-4 text-2xl font-semibold leading-tight">
                 Web, motion, interaction.
               </div>
-              <div className="mt-3 text-sm leading-relaxed text-white/60">
+              <div className="mt-3 text-sm leading-relaxed text-[rgb(var(--fg)/0.65)]">
                 Senior-only team. Tight feedback loops. Production-ready code.
               </div>
-              <div className="mt-8 flex items-center justify-between text-sm text-white/70">
+              <div className="mt-8 flex items-center justify-between text-sm text-[rgb(var(--fg)/0.75)]">
                 <span>Based in</span>
-                <span className="text-white/90">Kyiv / Worldwide</span>
+                <span className="text-[rgb(var(--fg)/0.92)]">Kyiv / Worldwide</span>
               </div>
             </Reveal>
           </div>
@@ -78,7 +78,10 @@ export function HomeRoute() {
           <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
             Featured works
           </h2>
-          <Link to="/works" className="text-sm text-white/70 hover:text-white">
+          <Link
+            to="/works"
+            className="text-sm text-[rgb(var(--fg)/0.75)] hover:text-[rgb(var(--fg))]"
+          >
             See all
           </Link>
         </div>
@@ -109,7 +112,7 @@ export function HomeRoute() {
           <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
             Services
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-white/60 md:text-base">
+          <p className="mt-4 text-sm leading-relaxed text-[rgb(var(--fg)/0.65)] md:text-base">
             A small, senior team that ships end‑to‑end: visual direction, motion
             language, and production code.
           </p>
@@ -138,7 +141,7 @@ export function HomeRoute() {
               className="rounded-3xl border border-white/10 bg-black/20 p-6"
             >
               <div className="text-sm font-semibold tracking-tight">{x.t}</div>
-              <div className="mt-2 text-sm leading-relaxed text-white/60">
+              <div className="mt-2 text-sm leading-relaxed text-[rgb(var(--fg)/0.65)]">
                 {x.d}
               </div>
             </Reveal>
@@ -157,7 +160,7 @@ export function HomeRoute() {
               className="rounded-2xl border border-white/10 bg-black/20 px-5 py-4"
             >
               <div className="text-sm font-medium">{c.name}</div>
-              <div className="mt-1 text-xs tracking-[0.18em] uppercase text-white/50">
+              <div className="mt-1 text-xs tracking-[0.18em] uppercase text-[rgb(var(--fg)/0.55)]">
                 {c.kind}
               </div>
             </div>
@@ -170,7 +173,7 @@ export function HomeRoute() {
           <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
             Let’s build something loud (in the right way).
           </h2>
-          <p className="mt-3 max-w-[70ch] text-sm leading-relaxed text-white/60">
+          <p className="mt-3 max-w-[70ch] text-sm leading-relaxed text-[rgb(var(--fg)/0.65)]">
             Tell us about your product, timeline, and what “success” means. We’ll
             respond with a short plan and next steps.
           </p>
@@ -185,7 +188,7 @@ export function HomeRoute() {
             <div className="space-y-2">
               <label
                 htmlFor={nameId}
-                className="text-xs tracking-[0.22em] uppercase text-white/60"
+                className="text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.6)]"
               >
                 Name
               </label>
@@ -193,7 +196,7 @@ export function HomeRoute() {
                 id={nameId}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/25"
+                className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-[rgb(var(--fg))] placeholder:text-[rgb(var(--fg)/0.45)] outline-none focus:border-white/25"
                 placeholder="Your name"
                 autoComplete="name"
               />
@@ -202,7 +205,7 @@ export function HomeRoute() {
             <div className="space-y-2">
               <label
                 htmlFor={emailId}
-                className="text-xs tracking-[0.22em] uppercase text-white/60"
+                className="text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.6)]"
               >
                 Email
               </label>
@@ -210,7 +213,7 @@ export function HomeRoute() {
                 id={emailId}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/25"
+                className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-[rgb(var(--fg))] placeholder:text-[rgb(var(--fg)/0.45)] outline-none focus:border-white/25"
                 placeholder="you@company.com"
                 autoComplete="email"
                 inputMode="email"
@@ -220,7 +223,7 @@ export function HomeRoute() {
             <div className="space-y-2 md:col-span-2">
               <label
                 htmlFor={messageId}
-                className="text-xs tracking-[0.22em] uppercase text-white/60"
+                className="text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.6)]"
               >
                 Message
               </label>
@@ -228,7 +231,7 @@ export function HomeRoute() {
                 id={messageId}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="min-h-[120px] w-full resize-y rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/25"
+                className="min-h-[120px] w-full resize-y rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-[rgb(var(--fg))] placeholder:text-[rgb(var(--fg)/0.45)] outline-none focus:border-white/25"
                 placeholder="What are we building?"
               />
             </div>
@@ -245,13 +248,13 @@ export function HomeRoute() {
 
               <Link
                 to="/works"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-medium text-white/90 transition hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-medium text-[rgb(var(--fg)/0.92)] transition hover:bg-white/10"
               >
                 Explore works
               </Link>
 
               {contact.data && contact.data.ok ? (
-                <div className="text-sm text-white/70">
+                <div className="text-sm text-[rgb(var(--fg)/0.75)]">
                   Received. We’ll reply soon.
                 </div>
               ) : null}

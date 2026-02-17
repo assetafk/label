@@ -54,10 +54,10 @@ export const Gallery = forwardRef<
   return (
     <div className="overflow-hidden rounded-3xl border border-white/10 bg-[rgb(var(--card))]">
       <div className="flex items-center justify-between gap-3 border-b border-white/10 px-5 py-4">
-        <div className="text-xs tracking-[0.22em] uppercase text-white/60">
+        <div className="text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.6)]">
           {title}
         </div>
-        <div className="flex items-center gap-2 text-xs text-white/60">
+        <div className="flex items-center gap-2 text-xs text-[rgb(var(--fg)/0.65)]">
           <button
             type="button"
             className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 hover:bg-white/10"

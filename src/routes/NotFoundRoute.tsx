@@ -4,13 +4,13 @@ export function NotFoundRoute() {
   return (
     <div className="pt-16">
       <div className="rounded-3xl border border-white/10 bg-[rgb(var(--card))] p-10">
-        <div className="text-xs tracking-[0.22em] uppercase text-white/60">
+        <div className="text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.6)]">
           404
         </div>
         <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
           Page not found
         </h1>
-        <p className="mt-3 text-sm leading-relaxed text-white/60">
+        <p className="mt-3 text-sm leading-relaxed text-[rgb(var(--fg)/0.65)]">
           The page you’re looking for doesn’t exist (yet).
         </p>
         <div className="mt-8">

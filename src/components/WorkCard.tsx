@@ -41,7 +41,7 @@ export function WorkCard({
             />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/0 to-black/0" />
-          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 text-xs tracking-[0.22em] uppercase text-white/70">
+          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 text-xs tracking-[0.22em] uppercase text-[rgb(var(--fg)/0.85)]">
             <span className="rounded-full border border-white/15 bg-black/30 px-3 py-1">
               {work.industry}
             </span>
@@ -54,18 +54,18 @@ export function WorkCard({
           <div className="text-lg font-semibold tracking-tight md:text-xl">
             {work.title}
           </div>
-          <div className="text-sm text-white/60">{work.tagline}</div>
+          <div className="text-sm text-[rgb(var(--fg)/0.65)]">{work.tagline}</div>
           <div className="mt-4 flex flex-wrap gap-2">
             {work.services.slice(0, 3).map((s) => (
               <span
                 key={s}
-                className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/70"
+                className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-[rgb(var(--fg)/0.75)]"
               >
                 {s}
               </span>
             ))}
           </div>
-          <div className="pt-2 text-sm text-white/70 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+          <div className="pt-2 text-sm text-[rgb(var(--fg)/0.75)] opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
             View case <span aria-hidden>→</span>
           </div>
         </div>
