@@ -1,126 +1,224 @@
 [
   {
     "slug": "fantik-style-landing",
-    "title": "Fantik‑style landing",
-    "tagline": "A motion-first studio site concept",
+    "title": "Fantik‑style studio site",
+    "tagline": "Motion-first homepage + case study system for a design studio",
     "year": 2026,
     "services": ["Art direction", "Web design", "Web development", "Motion"],
     "industry": "Design",
     "cover": {
-      "kind": "gradient",
-      "from": "rgba(255,255,255,0.12)",
-      "to": "rgba(210,255,105,0.18)"
+      "kind": "image",
+      "src": "https://images.unsplash.com/photo-1520975958225-2e7f4d8a2f7a?auto=format&fit=crop&q=80&w=1600",
+      "alt": "Studio lighting and abstract shapes"
     },
+    "gallery": [
+      {
+        "src": "https://images.unsplash.com/photo-1520975958225-2e7f4d8a2f7a?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Studio lighting and abstract shapes"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Desk with sketches and notes"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Close-up of typography print"
+      }
+    ],
     "blocks": [
       {
         "type": "text",
-        "title": "Intent",
-        "body": "Build a modular homepage that feels alive: subtle parallax, precise typography, and transitions that never steal attention from content."
+        "title": "Context",
+        "body": "The studio needed a homepage that could sell craft in seconds, then back it up with case studies — without turning into a template. The goal was a high-contrast, typography-led layout with deliberate motion."
       },
       {
         "type": "text",
-        "title": "System",
-        "body": "Reusable sections, consistent spacing, predictable motion curves, and an API-backed works list with instant prefetch."
+        "title": "What shipped",
+        "body": "A modular section system (hero, services, featured works, clients, contact), route transitions, and an API-backed works catalogue with prefetch-on-hover for instant navigation."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Planning board and sketches",
+        "caption": "Early structure: content-first sections with a motion layer on top."
+      },
+      {
+        "type": "text",
+        "title": "Design notes",
+        "body": "We kept the motion curve consistent across the site, used reduced-motion fallbacks, and treated spacing as a system — so the site stays “calm” even when animated."
       }
     ]
   },
   {
     "slug": "product-launch-kit",
     "title": "Product launch kit",
-    "tagline": "Campaign page + components for rapid iteration",
+    "tagline": "Campaign page, modular blocks, and analytics-ready layout",
     "year": 2025,
     "services": ["Design system", "Landing page", "Interaction"],
     "industry": "SaaS",
     "cover": {
-      "kind": "gradient",
-      "from": "rgba(210,255,105,0.12)",
-      "to": "rgba(255,255,255,0.10)"
+      "kind": "image",
+      "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=1600",
+      "alt": "Product team collaborating over a laptop"
     },
+    "gallery": [
+      {
+        "src": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Product team collaborating over a laptop"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Sticky notes and planning session"
+      }
+    ],
     "blocks": [
       {
         "type": "text",
         "title": "Challenge",
-        "body": "Ship fast without sacrificing polish: keep components strict, spacing consistent, and content editable."
+        "body": "Ship a launch page that marketing can iterate on daily, while keeping layout and typography consistent. The build had to be resilient to copy changes and long headlines."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Sticky notes on a wall",
+        "caption": "Modular blocks: the page can be rearranged without breaking rhythm."
+      },
+      {
+        "type": "text",
+        "title": "Result",
+        "body": "A component library for hero, social proof, pricing, FAQ, and CTAs — plus interaction patterns that highlight key decisions without distracting."
       }
     ]
   },
   {
     "slug": "studio-portfolio-v2",
     "title": "Studio portfolio v2",
-    "tagline": "Scrolling narrative with bold sections",
+    "tagline": "Scrolling narrative, fast navigation, and crisp typography",
     "year": 2025,
     "services": ["Web design", "Development", "Motion"],
     "industry": "Agency",
     "cover": {
-      "kind": "gradient",
-      "from": "rgba(255,255,255,0.10)",
-      "to": "rgba(255,255,255,0.02)"
+      "kind": "image",
+      "src": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&q=80&w=1600",
+      "alt": "Clean design grid on a screen"
     },
+    "gallery": [
+      {
+        "src": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Clean design grid on a screen"
+      }
+    ],
     "blocks": [
       {
         "type": "text",
         "title": "Approach",
-        "body": "A rhythm of dense and quiet sections: big headlines, small captions, and micro-interactions that guide focus."
+        "body": "A rhythm of dense and quiet sections: big headlines, short captions, and micro-interactions that guide focus. Motion is used to confirm navigation, not to decorate."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Design system layout",
+        "caption": "A grid-first system keeps pages consistent as content grows."
       }
     ]
   },
   {
     "slug": "interactive-case-study",
     "title": "Interactive case study",
-    "tagline": "Detail page with gallery + next/prev",
+    "tagline": "Case study template with gallery controls and prefetch",
     "year": 2026,
     "services": ["UX", "UI", "React build"],
     "industry": "Consumer",
     "cover": {
-      "kind": "gradient",
-      "from": "rgba(210,255,105,0.14)",
-      "to": "rgba(0,0,0,0.0)"
+      "kind": "image",
+      "src": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1600",
+      "alt": "People reviewing a product UI together"
     },
+    "gallery": [
+      {
+        "src": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1600",
+        "alt": "People reviewing a product UI together"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Team discussing a product roadmap"
+      }
+    ],
     "blocks": [
       {
         "type": "text",
         "title": "Details",
-        "body": "Prefetched data, motion transitions, and accessible navigation. Designed for speed and clarity."
+        "body": "Prefetched data, motion transitions, and accessible navigation. Designed for speed and clarity — the detail view should feel instant even on repeated visits."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Product workshop session",
+        "caption": "The template supports long-form narratives: text, images, and structured highlights."
       }
     ]
   },
   {
     "slug": "editorial-landing",
     "title": "Editorial landing",
-    "tagline": "Typography-led layout with subtle motion",
+    "tagline": "Typography-led layout with calm motion and clear hierarchy",
     "year": 2024,
     "services": ["Typography", "Layout", "Motion"],
     "industry": "Media",
     "cover": {
-      "kind": "gradient",
-      "from": "rgba(255,255,255,0.08)",
-      "to": "rgba(210,255,105,0.10)"
+      "kind": "image",
+      "src": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=1600",
+      "alt": "Open book and editorial desk scene"
     },
+    "gallery": [
+      {
+        "src": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Open book and editorial desk scene"
+      }
+    ],
     "blocks": [
       {
         "type": "text",
         "title": "Typography",
-        "body": "Large, tight headings paired with calm body text — a layout that can breathe on every viewport."
+        "body": "Large, tight headings paired with calm body text — a layout that can breathe on every viewport. We tuned line-length and spacing for scanning."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Editorial page detail",
+        "caption": "Hierarchy is the product: the motion just reinforces it."
       }
     ]
   },
   {
     "slug": "micro-interactions-pack",
     "title": "Micro‑interactions pack",
-    "tagline": "Small details that feel expensive",
+    "tagline": "Small interaction details that feel expensive — and accessible",
     "year": 2026,
     "services": ["Interaction", "Motion", "Components"],
     "industry": "Tools",
     "cover": {
-      "kind": "gradient",
-      "from": "rgba(255,255,255,0.07)",
-      "to": "rgba(255,255,255,0.01)"
+      "kind": "image",
+      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1600",
+      "alt": "Code editor and UI components on a screen"
     },
+    "gallery": [
+      {
+        "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Code editor and UI components on a screen"
+      }
+    ],
     "blocks": [
       {
         "type": "text",
         "title": "Focus",
-        "body": "Hover states, keyboard focus, and reduced-motion variants. Smooth does not mean inaccessible."
+        "body": "Hover states, keyboard focus, and reduced-motion variants. Smooth does not mean inaccessible — every interaction has a clear non-motion equivalent."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1600",
+        "alt": "Component development environment",
+        "caption": "A tiny library of UI patterns: cards, menus, progress, and safe transitions."
       }
     ]
   }

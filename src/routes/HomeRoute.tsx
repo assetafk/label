@@ -31,11 +31,11 @@ export function HomeRoute() {
               React • Motion • Craft
             </div>
             <h1 className="mt-6 text-balance text-5xl font-semibold leading-[0.95] tracking-tight md:text-7xl">
-              Unseen visuals for brands that refuse to sound like everyone else.
+              High‑craft websites for brands that refuse to blend in.
             </h1>
             <p className="mt-6 max-w-[56ch] text-pretty text-base leading-relaxed text-white/70 md:text-lg">
-              A motion‑first studio for product launches, campaigns, and interactive
-              websites. Designed and built with obsessive attention to rhythm.
+              We design and build motion‑first experiences for launches, campaigns,
+              and studio portfolios — with a system behind every detail.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link
@@ -59,10 +59,10 @@ export function HomeRoute() {
                 Now booking
               </div>
               <div className="mt-4 text-2xl font-semibold leading-tight">
-                Web design, dev, interaction.
+                Web, motion, interaction.
               </div>
               <div className="mt-3 text-sm leading-relaxed text-white/60">
-                Remote-first. Fast iterations. High-touch.
+                Senior-only team. Tight feedback loops. Production-ready code.
               </div>
               <div className="mt-8 flex items-center justify-between text-sm text-white/70">
                 <span>Based in</span>
