@@ -1,0 +1,9 @@
+[
+  { "name": "Sage Labs", "kind": "SaaS" },
+  { "name": "Belle Oaks", "kind": "E‑commerce" },
+  { "name": "Trinity Studio", "kind": "Agency" },
+  { "name": "Modus", "kind": "Brand" },
+  { "name": "Arc Daily", "kind": "Media" },
+  { "name": "Northwind", "kind": "Tools" }
+]
+

@@ -1,0 +1,128 @@
+[
+  {
+    "slug": "fantik-style-landing",
+    "title": "Fantik‑style landing",
+    "tagline": "A motion-first studio site concept",
+    "year": 2026,
+    "services": ["Art direction", "Web design", "Web development", "Motion"],
+    "industry": "Design",
+    "cover": {
+      "kind": "gradient",
+      "from": "rgba(255,255,255,0.12)",
+      "to": "rgba(210,255,105,0.18)"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Intent",
+        "body": "Build a modular homepage that feels alive: subtle parallax, precise typography, and transitions that never steal attention from content."
+      },
+      {
+        "type": "text",
+        "title": "System",
+        "body": "Reusable sections, consistent spacing, predictable motion curves, and an API-backed works list with instant prefetch."
+      }
+    ]
+  },
+  {
+    "slug": "product-launch-kit",
+    "title": "Product launch kit",
+    "tagline": "Campaign page + components for rapid iteration",
+    "year": 2025,
+    "services": ["Design system", "Landing page", "Interaction"],
+    "industry": "SaaS",
+    "cover": {
+      "kind": "gradient",
+      "from": "rgba(210,255,105,0.12)",
+      "to": "rgba(255,255,255,0.10)"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Challenge",
+        "body": "Ship fast without sacrificing polish: keep components strict, spacing consistent, and content editable."
+      }
+    ]
+  },
+  {
+    "slug": "studio-portfolio-v2",
+    "title": "Studio portfolio v2",
+    "tagline": "Scrolling narrative with bold sections",
+    "year": 2025,
+    "services": ["Web design", "Development", "Motion"],
+    "industry": "Agency",
+    "cover": {
+      "kind": "gradient",
+      "from": "rgba(255,255,255,0.10)",
+      "to": "rgba(255,255,255,0.02)"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Approach",
+        "body": "A rhythm of dense and quiet sections: big headlines, small captions, and micro-interactions that guide focus."
+      }
+    ]
+  },
+  {
+    "slug": "interactive-case-study",
+    "title": "Interactive case study",
+    "tagline": "Detail page with gallery + next/prev",
+    "year": 2026,
+    "services": ["UX", "UI", "React build"],
+    "industry": "Consumer",
+    "cover": {
+      "kind": "gradient",
+      "from": "rgba(210,255,105,0.14)",
+      "to": "rgba(0,0,0,0.0)"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Details",
+        "body": "Prefetched data, motion transitions, and accessible navigation. Designed for speed and clarity."
+      }
+    ]
+  },
+  {
+    "slug": "editorial-landing",
+    "title": "Editorial landing",
+    "tagline": "Typography-led layout with subtle motion",
+    "year": 2024,
+    "services": ["Typography", "Layout", "Motion"],
+    "industry": "Media",
+    "cover": {
+      "kind": "gradient",
+      "from": "rgba(255,255,255,0.08)",
+      "to": "rgba(210,255,105,0.10)"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Typography",
+        "body": "Large, tight headings paired with calm body text — a layout that can breathe on every viewport."
+      }
+    ]
+  },
+  {
+    "slug": "micro-interactions-pack",
+    "title": "Micro‑interactions pack",
+    "tagline": "Small details that feel expensive",
+    "year": 2026,
+    "services": ["Interaction", "Motion", "Components"],
+    "industry": "Tools",
+    "cover": {
+      "kind": "gradient",
+      "from": "rgba(255,255,255,0.07)",
+      "to": "rgba(255,255,255,0.01)"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Focus",
+        "body": "Hover states, keyboard focus, and reduced-motion variants. Smooth does not mean inaccessible."
+      }
+    ]
+  }
+]
+
