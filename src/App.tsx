@@ -8,6 +8,7 @@ import { WorkDetailRoute } from './routes/WorkDetailRoute'
 import { WorksRoute } from './routes/WorksRoute'
 import { ScrollToTop } from './components/ScrollToTop'
 import { ScrollProgress } from './components/ScrollProgress'
+import { LoginRoute } from './routes/LoginRoute'
 
 export default function App() {
   const location = useLocation()
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/" element={<HomeRoute />} />
             <Route path="/works" element={<WorksRoute />} />
             <Route path="/works/:slug" element={<WorkDetailRoute />} />
+            <Route path="/login" element={<LoginRoute />} />
             <Route path="*" element={<NotFoundRoute />} />
           </Routes>
         </motion.main>

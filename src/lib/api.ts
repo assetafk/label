@@ -33,6 +33,15 @@ export type ContactResponse =
   | { ok: true; receivedAt: string }
   | { ok: false; issues: string[] }
 
+export type AuthUser = {
+  email: string
+}
+
+export type LoginResponse = {
+  token: string
+  user: AuthUser
+}
+
 export class ApiError extends Error {
   status: number
 
@@ -54,11 +63,18 @@ async function parseJsonSafely(res: Response) {
   }
 }
 
+function getAuthToken() {
+  if (typeof window === 'undefined') return null
+  return window.localStorage.getItem('auth_token')
+}
+
 async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
+  const token = getAuthToken()
   const res = await fetch(`${API_BASE}${path}`, {
     ...init,
     headers: {
       'content-type': 'application/json',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...(init?.headers ?? {}),
     },
   })
@@ -106,5 +122,16 @@ export async function sendContact(payload: ContactPayload) {
     method: 'POST',
     body: JSON.stringify(payload),
   })
+}
+
+export async function login(email: string, password: string) {
+  return apiFetch<LoginResponse>('/api/login', {
+    method: 'POST',
+    body: JSON.stringify({ email, password }),
+  })
+}
+
+export async function getCurrentUser() {
+  return apiFetch<{ user: AuthUser }>('/api/me')
 }
 

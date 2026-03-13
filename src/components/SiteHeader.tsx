@@ -3,6 +3,7 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useTheme } from '../app/useTheme'
 import { useUi } from '../app/useUi'
 import { useLenis } from '../app/useLenis'
+import { useAuth } from '../app/useAuth'
 
 function navLinkClassName({ isActive }: { isActive: boolean }) {
   return [
@@ -17,6 +18,7 @@ export function SiteHeader() {
   const { scrollTo } = useLenis()
   const { theme, toggleTheme } = useTheme()
   const { menuOpen, closeMenu, toggleMenu } = useUi()
+  const { user, logout } = useAuth()
   const headerRef = useRef<HTMLElement | null>(null)
 
   useLayoutEffect(() => {
@@ -83,6 +85,19 @@ export function SiteHeader() {
             >
               Contact
             </button>
+            {user ? (
+              <button
+                type="button"
+                onClick={logout}
+                className="text-sm text-[rgb(var(--fg)/0.75)] hover:text-[rgb(var(--fg))]"
+              >
+                Logout
+              </button>
+            ) : (
+              <NavLink to="/login" className={navLinkClassName}>
+                Login
+              </NavLink>
+            )}
           </nav>
 
           <button
@@ -139,6 +154,25 @@ export function SiteHeader() {
               >
                 Works
               </NavLink>
+              {user ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    closeMenu()
+                    logout()
+                  }}
+                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm text-[rgb(var(--fg)/0.85)]"
+                >
+                  Logout
+                </button>
+              ) : (
+                <NavLink
+                  to="/login"
+                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-[rgb(var(--fg)/0.85)]"
+                >
+                  Login
+                </NavLink>
+              )}
               <button
                 type="button"
                 onClick={() => {

@@ -9,17 +9,20 @@ import { queryClient } from './lib/queryClient.ts'
 import { LenisProvider } from './app/LenisProvider.tsx'
 import { ThemeProvider } from './app/theme.tsx'
 import { UiProvider } from './app/ui.tsx'
+import { AuthProvider } from './app/auth.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <UiProvider>
-          <LenisProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </LenisProvider>
+          <AuthProvider>
+            <LenisProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </LenisProvider>
+          </AuthProvider>
         </UiProvider>
       </ThemeProvider>
       <ReactQueryDevtools initialIsOpen={false} />

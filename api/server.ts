@@ -1,5 +1,6 @@
 import cors from 'cors'
 import express from 'express'
+import jwt from 'jsonwebtoken'
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -26,6 +27,15 @@ export type Work = {
 
 export type Client = { name: string; kind: string }
 
+type AuthUser = {
+  email: string
+}
+
+type JwtPayload = AuthUser & {
+  iat: number
+  exp: number
+}
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const dataDir = path.join(__dirname, 'data')
 
@@ -44,9 +54,71 @@ app.use(
   }),
 )
 
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@example.com'
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'
+const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret'
+
+function createToken(user: AuthUser) {
+  return jwt.sign(user, JWT_SECRET, { expiresIn: '7d' })
+}
+
+function getTokenFromHeader(req: express.Request) {
+  const header = req.headers.authorization
+  if (!header) return null
+  const [scheme, token] = header.split(' ')
+  if (scheme !== 'Bearer' || !token) return null
+  return token
+}
+
+function authenticate(
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction,
+) {
+  const token = getTokenFromHeader(req)
+  if (!token) return res.status(401).json({ message: 'Unauthorized' })
+
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET) as JwtPayload
+    ;(req as express.Request & { user?: AuthUser }).user = {
+      email: decoded.email,
+    }
+    next()
+  } catch {
+    return res.status(401).json({ message: 'Invalid token' })
+  }
+}
+
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true })
 })
+
+app.post('/api/login', (req, res) => {
+  const { email, password } = req.body ?? {}
+
+  if (typeof email !== 'string' || typeof password !== 'string') {
+    return res.status(400).json({ message: 'Email and password are required' })
+  }
+
+  if (email !== ADMIN_EMAIL || password !== ADMIN_PASSWORD) {
+    return res.status(401).json({ message: 'Invalid credentials' })
+  }
+
+  const user: AuthUser = { email: ADMIN_EMAIL }
+  const token = createToken(user)
+
+  return res.json({ token, user })
+})
+
+app.get(
+  '/api/me',
+  (req, res, next) => authenticate(req, res, next),
+  (req, res) => {
+    const user = (req as express.Request & { user?: AuthUser }).user
+    if (!user) return res.status(401).json({ message: 'Unauthorized' })
+    return res.json({ user })
+  },
+)
 
 app.get('/api/works', async (req, res) => {
   const works = await readJson<Work[]>('works.json')
